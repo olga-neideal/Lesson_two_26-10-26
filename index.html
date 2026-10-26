@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3f0">
+  <meta name="description" content="Открой страницу и получи послание дня — с текстом, пожеланием и картинкой.">
+  <title>Послание — твой знак на сегодня</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%80%EF%B8%8F%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <section id="landing" class="screen">
+    <div class="wrap">
+      <header class="hero">
+        <div class="logo" aria-hidden="true">☀️</div>
+        <div class="eyebrow">Твоя маленькая традиция</div>
+        <h1>Послание дня</h1>
+        <p class="lead">
+          Открой конверт — и получи знак на сегодня.
+          Иногда это поддержка, иногда ирония, иногда просто напоминание поесть.
+        </p>
+        <div class="date-chip" id="todayLanding"></div>
+        <div class="cta-row">
+          <button class="btn btn-primary" id="openDailyBtn">💌 Получить послание</button>
+          <button class="btn" id="openSurpriseBtn">🎲 Удиви меня</button>
+        </div>
+      </header>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-n">Шаг 1</div>
+          <h3>Открой</h3>
+          <p>Нажми кнопку — как будто достаёшь письмо из конверта.</p>
+        </article>
+        <article class="step">
+          <div class="step-n">Шаг 2</div>
+          <h3>Прочитай</h3>
+          <p>Тебе выпадет текст, пожелание и картинка. На день — одно основное послание.</p>
+        </article>
+        <article class="step">
+          <div class="step-n">Шаг 3</div>
+          <h3>Сохрани</h3>
+          <p>Скопируй или поделись, если хочется передать знак дальше.</p>
+        </article>
+      </div>
+
+      <aside class="preview">
+        <img
+          src="assets/flowers.svg"
+          alt="Цветы — намёк на послание"
+        >
+        <div class="preview-body">
+          <h2>Каждый день — новое письмо</h2>
+          <p>
+            Послание дня выбирается по дате: у всех, кто откроет сайт сегодня,
+            будет один и тот же основной текст. А кнопка сюрприза достаёт ещё одно —
+            если хочется второго знака.
+          </p>
+        </div>
+      </aside>
+
+      <footer class="site-footer">
+        Не обязательно быть продуктивной каждую минуту.<br>
+        Иногда лучший план на день — прожить его по-своему. 💜
+      </footer>
+    </div>
+  </section>
+
+  <section id="message" class="screen hidden">
+    <div class="wrap">
+      <div class="topbar">
+        <button class="ghost" id="homeBtn" type="button">← На главную</button>
+        <div class="date-chip" id="today"></div>
+      </div>
+
+      <article class="card" aria-live="polite" aria-atomic="true">
+        <div class="card-image">
+          <span class="badge" id="category">✨ Твоё послание</span>
+          <img id="messageImage" alt="Картинка к посланию">
+        </div>
+        <div class="card-body">
+          <div class="message-icon" id="messageIcon" aria-hidden="true">🌷</div>
+          <h2 class="message-title" id="messageTitle">Сегодня всё возможно</h2>
+          <p class="message-text" id="messageText"></p>
+          <div class="wish">
+            <strong>💌 Моё пожелание тебе</strong>
+            <span id="messageWish"></span>
+          </div>
+          <div class="signature" id="signature">С теплом, твой внутренний голос</div>
+        </div>
+      </article>
+
+      <div class="buttons">
+        <button class="btn btn-primary" id="surpriseBtn">🎲 Другое послание</button>
+        <button class="btn" id="copyBtn">📋 Скопировать</button>
+        <button class="btn full" id="shareBtn">↗ Поделиться</button>
+      </div>
+
+      <p class="daily-note">
+        Основное послание привязано к календарной дате.
+        Сюрприз открывает случайное письмо из той же коллекции.
+      </p>
+    </div>
+  </section>
+
+  <div class="overlay hidden" id="overlay" aria-hidden="true">
+    <div class="envelope">
+      <div class="envelope-mark">✉️</div>
+      <p>Открываем письмо…</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/messages.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%80%EF%B8%8F%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-theme="pink">
   <section id="landing" class="screen">
     <div class="wrap">
       <header class="hero">
@@ -21,6 +21,31 @@
           Иногда это поддержка, иногда ирония, иногда просто напоминание поесть.
         </p>
         <div class="date-chip" id="todayLanding"></div>
+        <fieldset class="theme-picker">
+          <legend>Цвет фона</legend>
+          <div class="theme-options" role="radiogroup" aria-label="Цвет фона">
+            <label class="theme-option">
+              <input type="radio" name="bg-theme" value="pink" checked>
+              <span class="swatch swatch-pink" aria-hidden="true"></span>
+              <span>Нежный светло-розовый</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="bg-theme" value="turquoise">
+              <span class="swatch swatch-turquoise" aria-hidden="true"></span>
+              <span>Светло-нежно бирюзовый</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="bg-theme" value="green">
+              <span class="swatch swatch-green" aria-hidden="true"></span>
+              <span>Светло-нежно зелёный</span>
+            </label>
+            <label class="theme-option">
+              <input type="radio" name="bg-theme" value="yellow">
+              <span class="swatch swatch-yellow" aria-hidden="true"></span>
+              <span>Нежно-жёлтый</span>
+            </label>
+          </div>
+        </fieldset>
         <div class="cta-row">
           <button class="btn btn-primary" id="openDailyBtn">💌 Получить послание</button>
           <button class="btn" id="openSurpriseBtn">🎲 Удиви меня</button>
